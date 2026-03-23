@@ -1,0 +1,11 @@
+,🚚  CPT ↔ KIN LOGISTICS  |  Operations Dashboard,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6,Unnamed: 7
+0,Cape Town  ↔  Kinshasa   |   All figures in ZAR   |   Auto-updated from data sheets,,,,,,,
+1,,,,,,,,
+2,,FNB BALANCE,CASH ON HAND,REVENUE (ALL TIME),OUTSTANDING,PAID TO PASSENGERS,TOTAL PARCELS,TOTAL TRIPS
+3,,,,0,0,0,0,0
+4,,,,,,,,
+5,,NET PROFIT  =  Revenue  −  Passenger Payments,,0,,,,
+6,,,,,,,,
+7,,,,,,,,
+8,,📦  LATEST PARCELS  (add new entries in the 📦 Parcels sheet),,,,,,
+9,,Parcel ID,Date,Sender,Receiver,Direction,Weight,Charge (ZAR)
