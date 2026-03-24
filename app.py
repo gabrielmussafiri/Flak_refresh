@@ -1,4 +1,4 @@
-from flask import Flask , render_template , session
+from flask import Flask , render_template , session , make_response
 app = Flask(__name__,template_folder='templates',static_folder='static', static_url_path='/')
 app.secret_key='SOME KEY'
 
@@ -10,12 +10,28 @@ def index():
 @app.route('/set_data')
 def set_data():
     session['name'] ='Gabriel'
-    session['other']='Hello word'
-    
+    session['surname']='Mussafiri'
     return render_template('index.html',message='Session data set')
 
 @app.route('/get_dta')
-def get_data
+def get_data():
+    if "name" in session and 'surname' in session:
+        name = session.get('name')
+        surname = session.get('surname')
+        return render_template('index.html',message =f'Name :{name} Surname: {surname}')
+    else:
+        return render_template('index.html',message ='No session found')
+    
+@app.route('/clear_session')
+def clear_session():
+    session.clear()
+    return render_template('index.html',message ='Session clear')
+
+@app.route('/set_cookies')
+def set_cookies():
+    
+    
+
 
 if __name__=='__main__':
     app.run(debug=True)
