@@ -1,4 +1,4 @@
-from flask import Flask , render_template , session , make_response
+from flask import Flask , render_template , session , make_response , flash, request , redirect
 app = Flask(__name__,template_folder='templates',static_folder='static', static_url_path='/')
 app.secret_key='SOME KEY'
 
@@ -29,8 +29,25 @@ def clear_session():
 
 @app.route('/set_cookies')
 def set_cookies():
-    
-    
+    response = make_response(render_template('index.html',message='Cookies Set'))
+    response.set_cookie('cookie_name','cokkie_value')
+    return response
+
+@app.route('/login',methods=['POST','GET'])
+def login():
+    if request.method=='GET':
+        return render_template('login.html')
+    elif request.method =='POST':
+        username = request.form.get('username')
+        password = request.form.get('password')
+        
+        if username == 'gabriel' and password == 'admin123':
+            flash('Sussessful Login!')
+            return render_template('index.html',message ='')
+        else:
+            flash('Login Failed!')
+            return redirect('login.html',message ='')
+            
 
 
 if __name__=='__main__':
