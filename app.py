@@ -42,7 +42,7 @@ def login():
         password = request.form.get('password')
         
         if username == 'gabriel' and password == 'admin123':
-            flash('Sussessful Login!')
+            flash('Sussessful Login!!')
             return render_template('index.html',message ='')
         else:
             flash('Login Failed!')
